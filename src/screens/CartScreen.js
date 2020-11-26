@@ -27,12 +27,12 @@ const CartScreen = () => {
             <Card className="my-3 shadow-lg p-3 mb-5 bg-white rounded">
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <p>
+                  <p className="d-flex justify-content-end">
                     Your Total of (
                     {cartItems.reduce((acc, item) => acc + item.qty, 0)}) Items
                     is :
                   </p>
-                  <p>
+                  <p className="d-flex justify-content-end font-weight-bold">
                     {'  '}${' '}
                     {cartItems
                       .reduce((acc, item) => acc + item.qty * item.price, 0)
