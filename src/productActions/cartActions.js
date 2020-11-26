@@ -7,7 +7,7 @@ const addToCart = (qty, product) => async (dispatch) => {
   dispatch({
     type: CART_ADD_ITEM,
     payload: {
-      product: product._id,
+      _id: product._id,
       name: product.name,
 
       price: product.price,
@@ -17,4 +17,11 @@ const addToCart = (qty, product) => async (dispatch) => {
   });
 };
 
-export { addToCart };
+const removeFromCart = (id) => async (dispatch) => {
+  dispatch({
+    type: CART_REMOVE_ITEM,
+    payload: id,
+  });
+};
+
+export { addToCart, removeFromCart };
