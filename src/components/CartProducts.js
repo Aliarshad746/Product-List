@@ -17,6 +17,8 @@ const CartProducts = ({ item }) => {
     dispatch(removeFromCart(id));
   };
 
+  console.log(quantity);
+
   return (
     <ListGroup.Item>
       <Row>
@@ -38,8 +40,9 @@ const CartProducts = ({ item }) => {
             {` `}
             <Form.Control
               type="number"
+              placeholder="Item"
               value={quantity < 0 ? setQuantity(0) : quantity}
-              onChange={(e) => setQuantity(+e.target.value)}
+              onChange={(e) => setQuantity(parseInt(e.target.value, 10))}
               style={{ width: '40%', textAlign: 'center' }}
             ></Form.Control>
             {` `}

@@ -12,7 +12,7 @@ const addToCart = (qty, product) => async (dispatch) => {
 
       price: product.price,
 
-      qty,
+      qty: qty ? qty : 0,
     },
   });
 };

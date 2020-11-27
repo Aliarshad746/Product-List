@@ -31,8 +31,9 @@ const ListProduct = ({ product }) => {
             {` `}
             <Form.Control
               type="number"
+              placeholder="Item"
               value={qty < 0 ? setQty(0) : qty}
-              onChange={(e) => setQty(+e.target.value)}
+              onChange={(e) => setQty(parseInt(e.target.value, 10))}
               style={{ width: '30%', textAlign: 'center' }}
             ></Form.Control>
             {` `}
