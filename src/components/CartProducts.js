@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ListGroup, Row, Col, Button } from 'react-bootstrap';
+import { ListGroup, Row, Col, Button, Form } from 'react-bootstrap';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import { useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from '../productActions/cartActions';
@@ -23,10 +23,10 @@ const CartProducts = ({ item }) => {
         <Col md={3} className="py-2">
           {item.name}
         </Col>
-        <Col md={3} className="py-2">
+        <Col md={2} className="py-2">
           $ {item.price}
         </Col>
-        <Col md={4} className="py-2">
+        <Col md={5} className="py-2">
           <Row className="d-flex justify-content-between mb-3 ml-1 mr-3 align-items-center">
             <Button
               variant="outline-primary"
@@ -36,7 +36,12 @@ const CartProducts = ({ item }) => {
             </Button>
 
             {` `}
-            {quantity < 0 ? setQuantity(0) : quantity}
+            <Form.Control
+              type="number"
+              value={quantity < 0 ? setQuantity(0) : quantity}
+              onChange={(e) => setQuantity(+e.target.value)}
+              style={{ width: '40%', textAlign: 'center' }}
+            ></Form.Control>
             {` `}
 
             <Button

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { ListGroup, Row, Col, Button } from 'react-bootstrap';
+import { ListGroup, Row, Col, Button, Form } from 'react-bootstrap';
 import { addToCart } from '../productActions/cartActions';
 
 const ListProduct = ({ product }) => {
@@ -29,7 +29,12 @@ const ListProduct = ({ product }) => {
             </Button>
 
             {` `}
-            {qty < 0 ? setQty(0) : qty}
+            <Form.Control
+              type="number"
+              value={qty < 0 ? setQty(0) : qty}
+              onChange={(e) => setQty(+e.target.value)}
+              style={{ width: '30%', textAlign: 'center' }}
+            ></Form.Control>
             {` `}
 
             <Button variant="outline-success" onClick={() => setQty(qty + 1)}>
