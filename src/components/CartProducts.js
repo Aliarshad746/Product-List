@@ -11,6 +11,7 @@ const CartProducts = ({ item }) => {
 
   useEffect(() => {
     dispatch(addToCart(quantity, item));
+    // eslint-disable-next-line
   }, [dispatch, quantity]);
 
   const removeFromCartHandler = (id) => {
