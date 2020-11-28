@@ -1,6 +1,33 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br>
+Live page link [here](https://productlist.netlify.app/)
+
+## Installation
+
+For installation download the code and in root directory <br>
+In terminal type
+
+```
+npm install
+
+```
+
+## Packages used
+
+```
+react-bootstrap
+react-redux
+react-router
+react-router-dom
+react-router-bootstrap
+@material-ui/core
+@material-ui/icons
+redux
+redux-thunk
+redux-devtools-extension
+
+```
 
 ## Available Scripts
 
